@@ -22,7 +22,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/opendatahub-io/llama-stack-demos.git
+        repoURL: https://github.com/maxisses/llama-stack-demos.git
         targetRevision: main
         path: '{{path}}'
         directory:
