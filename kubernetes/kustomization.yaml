@@ -2,6 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: llama-serve
 resources:
+  # custom-credentials
+  - custom-credentials/hugging-face.yaml
   # llama-serve resources
   - llama-serve/granite-8b/chat-template.yaml
   - llama-serve/granite-8b/route.yaml

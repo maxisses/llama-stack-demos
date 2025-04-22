@@ -6,7 +6,7 @@ metadata:
     app: llama32-3b
     app.kubernetes.io/instance: llama-vllm
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: llama32-3b
@@ -27,6 +27,10 @@ spec:
             defaultMode: 420
         - name: config
           emptyDir: {}
+      tolerations:
+        - key: "nvidia.com/gpu"
+          operator: "Exists"
+          effect: "NoSchedule"
       containers:
         - resources:
             limits:
@@ -55,7 +59,7 @@ spec:
             - name: config
               mountPath: /.config
           terminationMessagePolicy: File
-          image: 'vllm/vllm-openai:v0.7.3'
+          image: 'vllm/vllm-openai:v0.8.4'
           args:
             - '--model'
             - meta-llama/Llama-3.2-3B-Instruct

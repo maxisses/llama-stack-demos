@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: huggingface-secret
+type: Opaque
+data:
+  HF_TOKEN: aGZfTkhSQ0VaWGRySnhtdWJjS0NVR01SWVdoUnptWXZUUGp6Sgo=
